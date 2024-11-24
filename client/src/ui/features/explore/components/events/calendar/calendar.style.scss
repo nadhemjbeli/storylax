@@ -1,0 +1,133 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 40rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  //overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: $primary-blue;
+    color: $white;
+
+    .icon-container {
+      display: flex;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      border-radius: 100vh;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $primary-darkBlue;
+        fill: $white;
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+      }
+
+      .icon {
+        height: 2.5rem;
+        fill: $white;
+      }
+    }
+
+    .calendar-title {
+      font-size: 2.3rem;
+      font-weight: bold;
+    }
+  }
+
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    padding: 1rem;
+
+    .calendar-day-name {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .calendar-day {
+      position: relative;
+      text-align: center;
+      font-size: 2rem;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+
+      &.active {
+        background-color: $primary-blue;
+        color: white;
+        &:hover {
+          background-color: $primary-darkBlue;
+          color: $white;
+          cursor: pointer;
+        }
+      }
+
+      &:hover {
+        background-color: $primary-blue;
+        color: $white;
+        cursor: pointer;
+
+        .event-dropdown {
+          color: $darkGrayBlue;
+          cursor: auto;
+          display: block;
+        }
+      }
+
+      .event-point {
+        position: absolute;
+        bottom: 0.3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: red;
+        border-radius: 50%;
+      }
+
+      .event-dropdown {
+        display: none;
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        width: 15rem;
+        transform: translateX(-50%);
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem;
+        z-index: 1;
+
+        .event-item {
+          font-size: 1.5rem;
+          padding: 0.3rem 0;
+          z-index: 2;
+          display: block;
+          color: $primary-blue;
+          //text-decoration: none;
+          transition: background-color .3s ease, color .3s ease;
+          &:hover {
+            background-color: $primary-blue;
+            color: $white;
+            //text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

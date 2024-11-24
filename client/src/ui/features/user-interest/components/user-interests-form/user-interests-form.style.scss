@@ -1,0 +1,121 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .tags-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .switch-aside {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+    }
+  }
+
+  .error-message {
+    color: red;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+
+
+  .counter {
+    position: relative;
+    margin: 0 auto 1rem;
+    width: 70%;
+    font-size: 1.5rem;
+    color: #666;
+  }
+
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0 auto;
+      width: 70%;
+
+      .interest-submit-button,
+      .interest-cancel-button {
+        flex: 1;
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .interest-submit-button {
+        background-color: $primary-blue;
+
+        &:hover {
+          background-color: $primary-darkBlue;
+        }
+      }
+
+      .interest-cancel-button {
+        background-color: $danger-button;
+
+        &:hover {
+          background-color: $danger-dark-button;
+        }
+      }
+    }
+  }
+}

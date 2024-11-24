@@ -1,0 +1,42 @@
+.cards-container {
+  border: 2px solid $darkGrayBlue;
+  width: 60rem;
+  height: 50rem;
+  display: grid;
+  transform: translateY(-5rem);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 20px;
+  margin-top: 5rem;
+  padding: 10px;
+  overflow-y: auto;
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    .title {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .city {
+      font-size: 1.8rem;
+      color: #666;
+    }
+
+    .transportation {
+      color: #888;
+    }
+
+    .description {
+      color: #444;
+    }
+  }
+
+
+}
+
+

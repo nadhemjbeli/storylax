@@ -1,0 +1,103 @@
+.event-table-container {
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.6rem;
+  }
+
+  .event-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    .table-row{
+      transition: background-color .3s ease;
+      &:hover{
+        background-color: #cccccc;
+      }
+    }
+
+    .thead-item, .table-data {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .thead-item {
+      background-color: $darkGrayBlue;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .table-buttons {
+      display: flex;
+      gap: 10px;
+
+      button {
+        padding: 15px;
+        border-radius: 100vh;
+        border: none;
+        cursor: pointer;
+        color: white;
+        transition: background-color .3s ease;
+
+        &.images-button {
+          background-color: $darkGrayBlue;
+          &:hover {
+            background-color: $veryDarkGrayBlue;
+          }
+        }
+
+        &.edit-button {
+          background-color: $primary-blue;
+          &:hover {
+            background-color: $primary-darkBlue;
+          }
+        }
+
+        &.delete-button {
+          background-color: $danger-button;
+          &:hover {
+            background-color: $danger-dark-button;
+          }
+        }
+        .admin-manage-icon{
+          height: 2rem;
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      background-color: $primary-blue;
+      border-radius: 100vh;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 0 5px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: #999999;
+        cursor: not-allowed;
+      }
+
+      &.active {
+        background-color: $primary-darkBlue;
+      }
+    }
+  }
+}

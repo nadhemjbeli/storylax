@@ -1,0 +1,208 @@
+.call-to-action-section {
+  background-color: $lightGrayBlue;
+  color: $lightestGray;
+  padding: 1.5rem 3.5rem 1.5rem 0.5rem;
+  .content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 5rem;
+    .left-part {
+      margin: 5rem 0;
+      width: 35svw;
+      .title {
+        margin: 0 0 1rem;
+        font-size: 3.2rem;
+      }
+      .group {
+        .item {
+          margin-bottom: 1rem;
+          font-size: 2rem;
+        }
+      }
+      .btn-container {
+        margin-top: 3rem;
+        position: relative;
+        width: 20rem;
+        height: 4.5rem;
+        border-radius: 1.5rem;
+        @include btn-animation(1rem);
+        .call-to-action-btn {
+          border-radius: 1.5rem;
+          background-color: white;
+          @include inter(600);
+          font-size: 2rem;
+          width: 100%;
+          height: 100%;
+          border: 1px #ccc solid;
+        }
+        .arrow-icon {
+          z-index: 1;
+          width: 2rem;
+          height: 2rem;
+          stroke: var(--sgv);
+          left: -50px;
+          position: absolute;
+          opacity: 0;
+          transition: left 0.5s ease-in-out;
+          top: 1.4rem;
+          fill: white;
+        }
+
+        &:hover {
+          .arrow-icon {
+            opacity: 1;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+    .card {
+      position: relative;
+      max-width: 30rem;
+      min-height: 35rem;
+      //padding: 5rem 0 3rem;
+      margin: 0 0 calc(25rem / 2) calc(25rem / 2);
+      border-radius: 1.5rem;
+      background-color: $mediumGrayBlue;
+      border: 2px $darkGrayBlue solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .card-image {
+        border-radius: 1.5rem 1.5rem 0 0;
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+      }
+      .card-content {
+        text-align: center;
+        padding: 1.5rem calc(20rem / 2);
+        .card-title {
+          font-size: 2.4rem;
+        }
+      }
+      .inner-cards {
+        width: 100%;
+        height: 2rem;
+        .inner-card {
+          position: absolute;
+          background-color: $mediumGrayBlue;
+          //box-shadow: 1px 1.5px 2px rgba(255, 255, 255, .8);
+          border: 2px $darkGrayBlue solid;
+          height: 10rem;
+          width: 20rem;
+          border-radius: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.right {
+            right: calc(-25rem / 2);
+            top: calc(40rem / 2 - 5rem);
+          }
+          &.left {
+            //opacity: 0;
+            left: calc(-25rem / 2);
+            top: calc(40rem / 2 - 5rem);
+          }
+          &.down {
+            left: calc((100% - 20rem) / 2);
+            bottom: calc(-12rem / 2);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Mobile styles
+@media (max-width: 768px) {
+  .call-to-action-section {
+    padding: 1rem;
+
+    .content {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      .left-part {
+        width: 100%;
+        text-align: center;
+        margin: 2rem 0;
+
+        .title {
+          font-size: 2.5rem;
+        }
+
+        .group {
+          text-align: left;
+          padding: 0 4rem;
+          .item {
+            font-size: 1.6rem;
+          }
+        }
+
+        .btn-container {
+          width: 50%;
+          height: 3rem;
+          margin: auto;
+
+          .call-to-action-btn {
+            font-size: 1.8rem;
+          }
+
+          .arrow-icon {
+            top: 0.5rem;
+          }
+        }
+      }
+
+      .card {
+        width: 80vw;
+        min-height: auto;
+        margin: 0;
+        border-radius: 1.5rem;
+
+        .card-image {
+          border-radius: 1.5rem 1.5rem 0 0;
+          height: 15rem;
+        }
+
+        .card-content {
+          padding: 1rem;
+
+          .card-title {
+            font-size: 2rem;
+          }
+        }
+
+        .inner-cards {
+          height: auto;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 3rem;
+          .inner-card {
+            height: 5rem;
+            width: 12rem;
+            border-radius: 1.5rem;
+
+            &.right,
+            &.left,
+            &.down {
+              font-size: 1rem;
+              position: static;
+              //margin: 0 1rem;
+            }
+            &.down {
+              margin: -1rem 0 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

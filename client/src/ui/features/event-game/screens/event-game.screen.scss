@@ -1,0 +1,102 @@
+.memory-game-container{
+  display: flex; /* Makes the two divs sit side by side */
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  //padding: 20px;
+  //padding-inline: -7rem;
+  .memory-game {
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+      color: #4a3aff;
+      margin-bottom: 20px;
+      font-size: 3rem;
+    }
+
+    button {
+      background-color: #4a3aff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: #3a32d0;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        background-color: #2a25a0;
+      }
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+
+      .card {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        perspective: 1000px;
+        cursor: pointer;
+        transition: transform 0.6s;
+
+        &.flipped {
+          .front {
+            transform: rotateY(0);
+          }
+          .back {
+            transform: rotateY(180deg);
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          backface-visibility: hidden;
+          transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .front {
+          transform: rotateY(180deg);
+        }
+
+        .back {
+          transform: rotateY(0);
+          background-color: #011936;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid #fff;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+
+    p {
+      font-size: 1.8rem;
+      color: #333;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+  }
+}

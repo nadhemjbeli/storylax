@@ -1,0 +1,29 @@
+.location-content{
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 10rem;
+  & :is(.location-left, .location-right){
+    width: 70rem;
+    height: 50rem;
+    //border: 1px crimson solid;
+    border-radius: 1.5rem;
+  }
+  .location-left{
+    border: 1px crimson solid;
+  }
+  .location-right{
+    padding: 2rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    .location{
+      font-size: 2.2rem;
+    }
+    .connecting-title{
+      font-size: 3rem;
+    }
+    .headquarters{
+      font-size: 2rem;
+    }
+  }
+}

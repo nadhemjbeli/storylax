@@ -1,0 +1,69 @@
+.matched-event {
+  flex: 1;
+  padding-left: 20px;
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .event-cards{
+    display: flex;
+    flex-wrap: wrap;
+    .matched-event-card {
+      display: flex;
+      align-items: center;
+      background-color: #ffffff;
+      //padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 30rem; /* Set width to 30rem */
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+
+      .event-details {
+        flex: 1;
+
+        h3 {
+          font-size: 20px;
+          margin-bottom: 5px;
+          color: #333;
+          text-transform: capitalize;
+        }
+
+        p {
+          font-size: 16px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .congrats-message {
+    font-size: 20px;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    color: #777;
+  }
+}

@@ -1,0 +1,33 @@
+
+
+export const blogTagsData:string[] = [
+    'ancient',
+    'archaeology',
+    'history',
+    'museum',
+    'tours',
+    'adventure',
+    'art',
+    'coffee',
+    'relaxation',
+    'sunset',
+    'beaches',
+    'culture',
+    'education',
+    'sightseeing',
+    'empire',
+    'rome',
+    'architecture',
+    'views',
+    'creativity',
+    'inspiration',
+    'cafes',
+    'mediterranean',
+    'sea',
+    'markets',
+    'shopping',
+    'souvenirs',
+    'heritage',
+    'activities',
+    'thrills'
+]

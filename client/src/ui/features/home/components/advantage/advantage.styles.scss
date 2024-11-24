@@ -1,0 +1,81 @@
+.advantage-section {
+  background-image: url("../../../../../assets/images/home/advantages/SECTION-3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  margin: 0;
+  padding-block: 8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+  grid-template-rows: repeat(auto-fit, minmax(20rem, 2fr));
+  gap: 2rem;
+  align-items: center;
+
+  .title-part {
+    .title {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 3rem;
+    }
+    .subtitle {
+      font-weight: 700;
+    }
+  }
+
+  .content-part {
+    width: 100rem;
+    grid-column: 2 / 5;
+    display: grid;
+    justify-self: end;
+    color: $white;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+    gap: 2rem;
+
+    .advantage-card {
+      height: 15rem;
+      grid-row: span 1;
+      grid-column: span 1;
+      padding: 2rem;
+      border-radius: 1rem;
+      background-color: $primary-cyan;
+      color: $primary-blue;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Adding shadow effect;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: rotate(45deg);
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+        &::before {
+          transform: rotate(45deg) translate(50%, 50%);
+        }
+      }
+    }
+  }
+
+  .advantage-card:nth-child(even) {
+    background-image: linear-gradient(135deg, $primary-pink 0%, lighten($primary-pink, 15%) 100%);
+    margin-top: 10rem;
+    color: $white;
+    background-color: $primary-pink;
+  }
+
+  .advantage-card:nth-child(odd) {
+    background-image: linear-gradient(135deg, $primary-cyan 0%, lighten($primary-cyan, 15%) 100%);
+  }
+}

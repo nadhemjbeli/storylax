@@ -1,0 +1,99 @@
+.testimonial-section {
+  .testimonials-slider {
+    position: relative;
+    width: 100%;
+    height: $testimonial_section_height;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+
+    .testimonial-card {
+      width: 30rem;
+      height: calc(30rem * 1.25);
+      padding: 2rem;
+      position: absolute;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: $lighterGray;
+      left: 50%;
+      border-radius: 3rem;
+      z-index: 1;
+      transition: left 0.75s, width 0.75s, height 0.75s;
+      display: none;
+      opacity: 0;
+      //transform: translateY(-10%);
+
+      &:nth-child(1) {
+        left: calc(55% - calc($testimonial_gap * 0.75));
+        display: block;
+        animation: hide 0.3s forwards infinite;
+      }
+      @for $i
+        from ($start_testimonial_index - 1)
+        through ($start_testimonial_index + $testimonial_count - 1)
+      {
+        &:nth-child(#{$i}) {
+          left: calc(55% + $testimonial_gap * ($i - $start_testimonial_index));
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 1;
+        }
+      }
+      &:nth-of-type(1) {
+        animation: hide 0.5s forwards;
+      }
+      .content {
+        //margin: 2rem auto;
+
+        .testimonial-profile-img {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .testimonial-name {
+          //height: 3rem;
+          @include inter(900);
+          font-size: 2rem;
+        }
+        .testimonial-content {
+          .testimonial-text {
+            position: relative;
+            font-size: 1.7rem;
+            margin: 2rem auto;
+
+            &:before,
+            &:after {
+              position: absolute;
+              font-size: 6rem;
+            }
+            &:before {
+              content: open-quote;
+              top: -4rem;
+              left: 0.5rem;
+            }
+            &:after {
+              content: close-quote;
+              bottom: -6.5rem;
+              right: 0.5rem;
+            }
+          }
+        }
+        .testimonial-profile {
+          display: flex;
+          align-items: center;
+          margin-top: 1rem;
+          .img-container {
+            margin-right: 1rem;
+          }
+          .testimonial-name {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

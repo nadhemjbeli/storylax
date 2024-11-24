@@ -1,0 +1,39 @@
+/* confirmation-modal.styles.scss */
+.confirmation-modal {
+  text-align: center;
+}
+
+.confirmation-modal h3 {
+  margin-bottom: 20px;
+}
+
+.confirmation-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.confirm-button, .cancel-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.confirm-button {
+  color: $white;
+  background-color: $danger-button !important;
+  transition: background-color .3s ease !important;
+  &:hover {
+    background-color: $danger-dark-button !important;
+  }
+  border: none;
+}
+
+.cancel-button {
+  background-color: #ccc !important;
+  color: $darkGrayBlue !important;
+  transition: background-color .3s ease !important;
+  &:hover {
+    background-color: #999999 !important;
+  }
+  border: none;
+}

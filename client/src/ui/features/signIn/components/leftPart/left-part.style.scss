@@ -1,0 +1,16 @@
+.left-part-section{
+  width: 55rem;
+  .slogan{
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    .sign-in-logo-img{
+      width: 19rem;
+      transform: translate(0rem, .25rem);
+    }
+  }
+  .left-part-img{
+    margin-bottom: 2rem;
+    border-radius: 2rem;
+    width: 50rem;
+  }
+}

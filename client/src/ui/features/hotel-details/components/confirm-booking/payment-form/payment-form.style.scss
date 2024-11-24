@@ -1,0 +1,12 @@
+.payment-form-section{
+  .payment-form{
+    margin: 2rem 0;
+    .submit-button{
+      display: flex;
+      justify-content: center;
+      #submit{
+        margin-top: 2rem;
+      }
+    }
+  }
+}

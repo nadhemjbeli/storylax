@@ -1,0 +1,94 @@
+.list-events {
+  transform: translateY(-1rem);
+  width: 70rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20rem, 1fr));
+  grid-template-rows: repeat(3, minmax(20rem, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+
+  .event-card {
+    position: relative;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-shadow: 0 -30px 40px rgba(0, 0, 0, 0.4) inset;
+    transition: transform 0.3s ease, color 0.3s ease;
+    color: $white;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+
+    &.event-closest {
+      height: calc(20rem * 2 + 2rem);
+      order: -1;
+      box-shadow: 0 -60px 80px rgba(0, 0, 0, 0.4) inset;
+      grid-column: span 2;
+      grid-row: span 2;
+
+      .event-content {
+        padding: 0 0 2rem 2rem;
+
+        .event-title {
+          font-size: 2.5rem;
+        }
+
+        .event-date {
+          gap: 3rem;
+          font-size: 2rem;
+
+          .calendar-icon {
+            width: 3rem;
+          }
+        }
+      }
+    }
+
+    .event-date-box {
+      margin: -1rem 0 0 -1rem;
+      position: relative;
+      width: 7rem;
+      height: 7rem;
+      background-color: $primary-blue;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: $white;
+    }
+
+    .event-content {
+      padding: 0 0 1rem 1rem;
+      position: absolute;
+      bottom: 0;
+
+      .event-title {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .event-date {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: $white;
+
+        .calendar-icon {
+          fill: $white;
+          width: 1.5rem;
+        }
+      }
+    }
+
+    .event-description {
+      margin-top: 0.5rem;
+      font-size: 1.6rem;
+      color: $white;
+    }
+  }
+}

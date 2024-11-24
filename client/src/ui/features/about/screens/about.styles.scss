@@ -1,0 +1,36 @@
+$imageHeight:40rem;
+.about{
+  .heading-underlined{
+    position: relative;
+    text-align: center;
+    &::after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 4px;
+      background-color: $lightGrayBlue;
+      margin: .5rem auto 1rem; /* Adjust the margin for spacing */
+    }
+  }
+  .bordered-image-container{
+    position: relative;
+    margin: 3.5rem 0;
+    height: $imageHeight;
+    .first-div,
+    .bordered-image{
+      border-radius: 1rem;
+      width: 100%;
+    }
+    .first-div{
+      position: relative;
+      height: $imageHeight;
+      border: .35rem solid $lightGrayBlue;
+    }
+    .bordered-image{
+      height: $imageHeight;
+      object-fit: cover;
+      transform: translate(-1rem, -($imageHeight) - 1rem);
+    }
+  }
+
+}

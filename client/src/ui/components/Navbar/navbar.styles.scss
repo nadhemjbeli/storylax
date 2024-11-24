@@ -1,0 +1,308 @@
+@for $i from 1 through $menu-items {
+  .navbar-container
+  .navbar-list
+  .nav-item.active:nth-child(#{$i})
+  ~ .indicator {
+    left: $nav-item-width * ($i - 1);
+    background: linear-gradient(130deg, $blueClear-navbar, $greenBlue-navbar);
+  }
+  .navbar-container .navbar-list .nav-item:nth-child(#{$i}):hover ~ .indicator {
+    left: $nav-item-width * ($i - 1) !important;
+    background: linear-gradient(130deg, $blueClear-navbar, $greenBlue-navbar);
+  }
+
+  .navbar-container .navbar-list .nav-item:nth-child(#{$i}):before {
+    background-color: $blueClear-navbar;
+  }
+
+  .navbar-container .navbar-list .nav-item:nth-child(#{$i}):after {
+    background-color: $greenBlue-navbar;
+  }
+
+  .navbar-container .navbar-list .nav-item.active:nth-child(#{$i}):before {
+    background-color: $blueClear-navbar;
+  }
+
+  .navbar-container .navbar-list .nav-item.active:nth-child(#{$i}):after {
+    background-color: $greenBlue-navbar;
+  }
+}
+
+.header {
+  background-color: rgba(255, 255, 255, .6);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  padding-inline: 8rem;
+  backdrop-filter: blur(7px); // Adjust the blur value as needed
+  -webkit-backdrop-filter: blur(7px); // For Safari support
+
+  .logo-container {
+    .logo-title {
+      display: flex;
+      align-items: center;
+      .img-logo {
+        height: 6rem;
+      }
+    }
+  }
+
+  .navbar-container {
+    flex: 1;
+    width: 100%;
+    margin: auto;
+    color: $primary-blue;
+
+    .navbar-list {
+      width: calc($nav-item-width * $menu-items);
+      justify-content: center;
+      margin: auto;
+
+      .nav-item {
+        .nav-item-link {
+          width: $nav-item-width;
+          text-align: center;
+          padding: 2rem;
+          font-size: 1.6rem;
+          font-weight: 700;
+        }
+        &.active {
+          .nav-item-link {
+            background: linear-gradient(
+                            130deg,
+                            $blueClear-navbar,
+                            $greenBlue-navbar
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        &:before,
+        &:after {
+          content: "";
+          border-radius: 50%;
+          transform: scale(0);
+          transition: 0.2s ease transform;
+        }
+
+        &:before {
+          top: -5px;
+          left: 10px;
+          width: 6px;
+          height: 6px;
+        }
+
+        &:after {
+          top: 1px;
+          left: 18px;
+          width: 4px;
+          height: 4px;
+        }
+
+        &:hover:before,
+        &:hover:after,
+        &.active:after,
+        &.active:before {
+          transform: scale(1);
+        }
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: 0.2s ease transform;
+        }
+
+        &:before {
+          top: 2px;
+          left: 10px;
+          width: 6px;
+          height: 6px;
+        }
+
+        &:after {
+          top: 8px;
+          left: 18px;
+          width: 4px;
+          height: 4px;
+        }
+      }
+
+      .indicator {
+        left: 0;
+        bottom: 15%;
+        width: $nav-item-width;
+        height: 3.5px;
+        border-radius: 5px;
+        transition: 0.5s ease left;
+      }
+    }
+  }
+
+  .account-container {
+    .call-to-action-registration {
+      margin-right: 3rem;
+      padding: 1rem 2rem;
+      border-radius: 1rem;
+      border: 1px solid $main-border-color;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 100%;
+        background-color: $primary-blue;
+        border-radius: 1rem;
+        left: 0;
+        top: 0;
+        transition: width 0.3s ease-in;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+
+      .arrow-icon {
+        width: 2rem;
+        height: 2rem;
+        stroke: var(--sgv);
+        left: -50px;
+        position: absolute;
+        opacity: 0;
+        transition: left 0.5s ease-in-out;
+        top: 1.4rem;
+        fill: $white;
+      }
+
+      &:hover {
+        .arrow-icon {
+          opacity: 1;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .account-content {
+      background-color: $white;
+      border-radius: 1rem;
+      transition: box-shadow 0.3s ease;
+      border: 1px solid $main-border-color;
+      padding: 0.8rem;
+
+      &:hover {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+      }
+      .avatar-image {
+        margin-left: 1rem;
+
+        .avatar-icon {
+          width: 3rem !important;
+          height: 3rem !important;
+        }
+      }
+      .burger-button {
+        .burger-icon {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+
+      .dropdown-menu {
+        top: 5rem;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid $main-border-color;
+        padding: 1rem 0;
+        width: 15rem;
+        border-radius: 1rem;
+        .dropdown-group{
+          .dropdown-item {
+            color: $darkGrayBlue;
+            transition: background-color .3s ease;
+            & :hover{
+              transition: background-color .3s ease, color .3s ease;
+              border-radius: 1rem;
+              background-color: #cccccc;
+            }
+            &.active{
+              border-radius: 1rem;
+              transition: background-color .3s ease, color .3s ease;
+              background-color: #cccccc;
+              color: $darkGrayBlue;
+              & :hover{
+                background-color: #cccccc;
+                color: $darkGrayBlue;
+              }
+            }
+            .dropdown-item-link {
+              width: 100%;
+              padding-inline: 2rem;
+              padding-block: 0.5rem;
+            }
+            &:not(:first-child) {
+              margin-top: 0.5rem;
+            }
+            .logout-button{
+              background-color: #fc224a;
+              border-radius: 1rem;
+              color: $white;
+              width: 100%;
+              padding-inline: 2rem;
+              padding-block: 0.5rem;
+              transition: background-color .3s ease;
+              &:hover{
+                background-color: #c90228;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  .light {
+    color: $lightestGray;
+    fill: $lightestGray;
+  }
+  .dark {
+    color: $darkGrayBlue;
+  }
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+
+  button {
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:first-child {
+      background-color: $danger-button;
+      color: $white;
+
+      &:hover {
+        background-color: $danger-dark-button;
+      }
+    }
+
+    &:last-child {
+      background-color: #ccc;
+      color: $darkGrayBlue;
+
+      &:hover {
+        background-color: #999;
+      }
+    }
+  }
+}
+

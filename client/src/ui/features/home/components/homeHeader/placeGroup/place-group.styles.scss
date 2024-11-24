@@ -1,0 +1,52 @@
+
+.offer-content {
+  width: calc(100% - 2rem);
+  left: -4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img-container {
+    width: 9rem;
+    margin-left: -6rem;
+    border-radius: 50%;
+    .counter {
+      z-index: 1000;
+      color: $darkGrayBlue;
+      box-shadow: 0 2rem 3rem rgba(255, 255, 255, 0.5);
+      @include inter(900);
+      font-size: 2.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      width: 42%;
+      border-radius: 50%;
+      color: $white;
+    }
+    .circle {
+      z-index: -1;
+      border-radius: 50%;
+      width: 9rem;
+      height: 9rem;
+      scale: 0;
+      transition: background 0.3s ease-in-out;
+
+      &.active-circle {
+        transition: z-index 150ms ease;
+        z-index: 2;
+        scale: 1;
+      }
+    }
+    .offer-img {
+      z-index: 1;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      box-shadow: 0 2rem 3rem rgba(255, 255, 255, 0.5) inset;
+      cursor: pointer;
+      transition: z-index 150ms ease;
+
+      &.active-img {
+        z-index: 3;
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+@for $i from 1 through $admin-menu-items {
+  .host-sidebar-container {
+    .card {
+      .list {
+        .sidebar-link.active:nth-child(#{$i}) ~ .indicator {
+          top: 50px * ($i - 1);
+          background-color: $white;
+        }
+
+        .sidebar-link:nth-child(#{$i}):hover ~ .indicator {
+          top: 50px * ($i - 1) !important;
+          background-color: $white;
+        }
+        .sidebar-link.active:nth-child(#{$i}) ~ .indicator:before{
+          background-color: $primary-blue;
+          box-shadow: 10px 10px 0 10px $white;
+        }
+
+        .sidebar-link:nth-child(#{$i}):hover ~ .indicator:before,
+        .sidebar-link.active:nth-child(#{$i}) ~ .indicator:before{
+          background-color: $primary-blue;
+          box-shadow: 10px 10px 0 10px $white;
+        }
+
+        .sidebar-link:nth-child(#{$i}):hover ~ .indicator:after,
+        .sidebar-link.active:nth-child(#{$i}) ~ .indicator:after {
+          background-color: $primary-blue;
+          box-shadow: 10px -10px 0 10px $white;
+        }
+
+        // Hover effect for other links
+        .sidebar-link:hover ~ .sidebar-link.active {
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.host-sidebar-container {
+  //margin-left: -9rem;
+  width: 300px;
+  background-color: azure;
+  display: grid;
+  place-items: start;
+
+  .card {
+    width: 300px;
+    z-index: 1001;
+    //display: flex;
+    position: fixed;
+    height: 100vh;
+    justify-content: left;
+    background-color: $primary-blue;
+    //&:before,
+    &:after {
+      content: '';
+      width: $admin-before-width;
+      height: $admin-before-width;;
+      background-color: $white;
+      position: absolute;
+      right: calc($admin-before-width * -1);; // Adjusted to keep inside the indicator
+    }
+
+    //&:before {
+    //  top: 0;
+    //  border-radius: 100vw 0 0 0;
+    //  box-shadow: -10px -10px 0 10px $primary-blue;
+    //}
+
+    &:after {
+      bottom: 0;
+      border-radius: 0 0 0 100vw;
+      box-shadow: -10px 10px 0 10px $primary-blue;
+
+    }
+    .logo-container {
+      padding: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .logo-img{
+        width: 15rem;
+      }
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      //box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      background-color: $primary-blue;
+
+      .sidebar-link {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        padding-left: 20px;
+        align-items: center;
+        gap: 5px;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: white;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        z-index: 2; // Ensure the text is above the indicator
+        transition: color .3s ease;
+
+        &.active {
+          .topic {
+            color: $primary-blue;
+          }
+          z-index: 30; // Increase z-index to ensure it's above the indicator
+        }
+
+        &:hover {
+          transition: color .3s ease;
+          color: $primary-blue;
+        }
+      }
+
+      .indicator {
+        width: 100%;
+        top: 0;
+        height: 50px;
+        //border-radius: 10px 0 0 10px;
+        position: absolute;
+        transition: top 0.3s ease-in;
+        z-index: 1; // Ensure the indicator is below the text
+
+        &:before, &:after {
+          content: '';
+          width: $admin-before-width;
+          height: $admin-before-width;
+          position: absolute;
+          right: 0; // Adjusted to keep inside the indicator
+        }
+
+        &:before {
+          top: calc($admin-before-width * -1);
+          border-radius: 0 0 100vw 0;
+        }
+
+        &:after {
+          bottom: calc($admin-before-width * -1);
+          border-radius: 0 100vw 0 0;
+        }
+      }
+    }
+  }
+}
+
+.main-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: indigo;
+}

@@ -1,0 +1,135 @@
+.event-page {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+  .event-hero {
+    position: relative;
+    text-align: center;
+
+    .event-image {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .event-info {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .event-title {
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .event-city {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+
+      .memory-game-btn {
+        background-color: #ff5a5f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.6rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: #e04848;
+        }
+      }
+    }
+  }
+
+  .event-details {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    .event-section {
+      margin-bottom: 30px;
+
+      h2 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: #555;
+      }
+    }
+
+    .event-dates {
+      display: flex;
+      justify-content: space-between;
+      p {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+    }
+
+    .event-author {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f0f8ff; // Light blue background
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        font-size: 2rem;
+        color: #333;
+      }
+
+      .author-info {
+        margin-left: 15px;
+
+        .author-name {
+          font-size: 1.8rem;
+          font-weight: 600;
+          color: #555;
+        }
+
+        .author-role {
+          font-size: 1.4rem;
+          color: #888;
+        }
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #757575; // Placeholder color for avatar
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+//$primary-blue: #4a3aff;
+$primary-blue: #3d00f9;
+$primary-cyan: #13d2ff;
+$primary-pink: #ff06ff;
+
+$primary-violet: #574f8c;
+
+//primary rgb
+
+$primary-r: 74;
+
+$primary-g: 58;
+
+$primary-b: 255;
+
+$primary-lightBlue: #c9c3ff;
+//$primary-blue: #4a3aff;
+$danger-button:#fc224a;
+$danger-dark-button:#c90228;
+$secondary-blue: #28afb0;
+//$primary-darkBlue: #0e0094;
+$primary-darkBlue: #2d00c7;
+$white: #ffffff;
+$lightestGray: #f7f8fb;
+$lighterGray: #e8ebff;
+$lightGrayBlue: #90a3bf;
+$mediumGrayBlue: #7d8fb3;
+$darkGrayBlue: #23262f;
+$veryDarkGrayBlue: #000000;
+
+//navbar colors
+$colorBg: #222a30;
+$colorOutline: #fff;
+$colorOutlineFade: #4e5559;
+
+@mixin navbar-gradient {
+  background: linear-gradient(130deg, $blueClear-navbar, $greenBlue-navbar);
+}
+
+@mixin navbar-bg-before {
+  background-color: $greenBlue-navbar;
+}
+
+@mixin navbar-bg-after {
+  background-color: $blueClear-navbar;
+}
+$orange-navbar: #f8732c;
+$redBlood-navbar: #d20000;
+$blueClear-navbar: #0092e0;
+$greenBlue-navbar: #00d563;
+$purple-navbar: purple;
+$pink-navbar: palevioletred;
+$blueSemiClear-navbar: #7085db;
+$darkPurple-navbar: #3d0b3d;
+
+//  border colors
+
+$main-border-color: #d6d6d6;

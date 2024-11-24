@@ -1,0 +1,283 @@
+@mixin title($size:6rem){
+  font-size: $size;
+  //@include inter(800);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+@keyframes bgZoom {
+  0% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+@keyframes animateClouds {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(6);
+  }
+}
+@keyframes hideClouds {
+  0% {
+    transform: scale(4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4.25);
+    opacity: 0;
+  }
+}
+
+.hero-section {
+  overflow-x: hidden;
+  margin-bottom: 7rem;
+  .hero-header{
+    height: 60rem;
+    min-width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    //justify-content: center;
+    position: relative;
+    color: white;
+    //text-align: center;
+    //transition: background-image .5s ease-in-out;
+    &.animate-bg {
+      animation: bgZoom 0.5s ease-in-out forwards; // Add bgZoom animation for background
+    }
+
+      &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3); // for overlay effect
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      width: 70rem;
+      padding-inline: 7rem;
+      z-index: 2;
+      animation: fadeIn 1s; // Add fadeIn animation for content
+
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+
+      .hero-title {
+        @include title;
+      }
+
+      .hero-description {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-button {
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        font-weight: 100;
+        color: white;
+        background: #007BFF;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background: #0056b3;
+        }
+      }
+    }
+    .navigation-dots {
+      z-index: 3;
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+
+      .dot {
+        width: 4rem; /* Adjust the width for the bar */
+        height: .7rem; /* Adjust the height for the thickness */
+        border-radius: 1rem; /* Slight rounding of the corners */
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &.active {
+          background: white;
+        }
+      }
+    }
+  }
+
+  .sides{
+    width: 100%;
+    //overflow: hidden;
+    & .hero-body{
+
+      margin-top: 4rem;
+      display: flex;
+      justify-content: center;
+      gap:1rem;
+      :is(.left, .right){
+        width: 45%;
+      }
+      .left{
+        padding: 0 5rem;
+        z-index: 50;
+        .left-content {
+          background-image: url(var(--apiUrl) + '/' + var(--background));
+          background-repeat: no-repeat;
+          background-size: cover; /* Ensure the image covers the entire div */
+          width: 100%;
+          height: 100%;
+          border-radius: 2rem; /* Apply border radius */
+          overflow: hidden; /* Hide overflow */
+          position: relative; /* Needed for absolutely positioned clouds */
+          .clouds {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+
+            .cloud {
+              position: absolute;
+              bottom: 0;
+              max-width: 100%;
+              opacity: 0;
+              &.show-cloud{
+                animation: animateClouds calc(var(--clouds) * var(--i) * 1s) ease;
+              }
+              &.hide-cloud{
+                animation: hideClouds 1s ease;
+              }
+            }
+          }
+        }
+      }
+      .right{
+        .body-title{
+          @include title(4rem);
+        }
+        .body-motivation{
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+        .event-cards {
+          display: flex;
+          gap: 2rem;
+          padding-bottom: 2rem;
+          -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+          scroll-behavior: smooth;
+          z-index: 20;
+          //overflow: auto;
+
+          &::-webkit-scrollbar {
+            display: none; /* Hide scrollbar in webkit browsers */
+          }
+
+          .event-card {
+            min-width: 250px;
+            background: white;
+            border: 2px solid $darkGrayBlue;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            cursor: grab;
+            display: grid;
+            grid-template-rows: 150px auto 1fr;
+            transition: transform 0.2s;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+
+            .event-image {
+              width: 100%;
+              height: 150px;
+              border-radius: 1rem 1rem 0 0;
+              background-size: cover;
+              background-position: center;
+              margin-bottom: 1rem;
+              user-select: none;
+              grid-row: 1;
+            }
+
+            .event-content {
+              display: grid;
+              grid-template-rows: auto auto 1fr;
+              padding: 1rem;
+              user-select: none;
+              grid-row: 2 / span 2;
+
+              .event-title {
+                font-size: 1.7rem;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              }
+
+              .event-details {
+                font-size: 1.4rem;
+                margin-bottom: 0.5rem;
+              }
+
+              .event-footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: auto; /* Pushes footer to the bottom */
+                user-select: none;
+                align-items: end;
+
+                .event-rate {
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  user-select: none; /* Disable text selection */
+
+                  .icon {
+                    transform: translateY(-2px);
+                    fill: #efca36;
+                    width: 3rem;
+                  }
+                  .rate {
+                    font-size: 1.4rem;
+                    padding-bottom: 0;
+                   }
+                }
+
+
+
+                .event-price {
+                  font-size: 1.8rem;
+                  color: $darkGrayBlue;
+                  user-select: none; /* Disable text selection */
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

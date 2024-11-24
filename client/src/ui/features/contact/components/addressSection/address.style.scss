@@ -1,0 +1,33 @@
+.address-section{
+  &.address-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 20px;
+    padding: 4rem 0;
+    .card {
+      background-color: $darkGrayBlue;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      color: $lightestGray;
+      fill: $lighterGray;
+      .icon{
+        width: 5rem;
+        height: 5rem;
+      }
+      .card-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      .card-content {
+        font-size: 1em;
+      }
+    }
+
+
+  }
+
+}

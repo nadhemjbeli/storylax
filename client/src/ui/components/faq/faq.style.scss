@@ -1,0 +1,48 @@
+  .faq-right{
+    border-radius: 1.5rem;
+    min-height: 40rem;
+    width: 100%;
+    &.dropdown-questions{
+      padding: 2rem;
+      .dropdown-question{
+        .question-content{
+          cursor: pointer;
+          height: 7rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: background-color .2s ease;
+          border-radius: .5rem;
+          .question{
+
+          }
+          .icon{
+            width: 20px;
+          }
+          &:hover{
+            background-color: rgba(0, 0, 0 , .2);
+            transition: background-color .2s ease;
+          }
+        }
+        .question-hr{
+          width: 100%;
+          margin: 0 auto;
+          background-color: rgba(0, 0, 0 , .2);
+          height: .02rem;
+        }
+        .answer {
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          padding: 0;
+          transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+        }
+
+        &.open .answer {
+          max-height: 20rem; // Set a value that is sufficient to fit the content
+          opacity: 1;
+          padding: 1rem 0.5rem;
+        }
+      }
+    }
+  }

@@ -1,0 +1,1 @@
+export const replaceSpace = (name: string) => name?.replace(/\s+/g, "-");

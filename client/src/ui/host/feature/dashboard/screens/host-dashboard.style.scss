@@ -1,0 +1,46 @@
+/* To hide all the content */
+.content .home,
+.content .blog,
+.content .help,
+.content .code,
+.content .about {
+  display: none;
+}
+
+.content .sub-title {
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.content hr {
+  height: 3px;
+  background-color: black;
+}
+
+.content .txt {
+  margin-top: 5px;
+  color: gray;
+  text-align: justify;
+  font-size: 16px;
+}
+
+/* To show the content based on selection */
+#home:checked ~ .content .home {
+  display: block;
+}
+
+#blog:checked ~ .content .blog {
+  display: block;
+}
+
+#help:checked ~ .content .help {
+  display: block;
+}
+
+#code:checked ~ .content .code {
+  display: block;
+}
+
+#about:checked ~ .content .about {
+  display: block;
+}

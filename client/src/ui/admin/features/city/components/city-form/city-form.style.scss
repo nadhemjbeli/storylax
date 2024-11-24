@@ -1,0 +1,89 @@
+.city-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .city-search-wrapper {
+    position: relative;
+  }
+
+  .city-dropdown {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .city-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+
+  label {
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  .image-upload-wrapper {
+    input[type="file"] {
+      border: none;
+      padding: 10px 0;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    background-color: $darkGrayBlue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color .3s ease;
+    &:hover {
+      background-color: $veryDarkGrayBlue;
+    }
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+  }
+  .promoted-toggle-button {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: $danger-button;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    //margin-top: 10px;
+
+    &.active {
+      background-color: $primary-blue;
+    }
+  }
+}

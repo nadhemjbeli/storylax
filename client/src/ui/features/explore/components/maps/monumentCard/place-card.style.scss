@@ -1,0 +1,62 @@
+.place-card {
+  position: absolute;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  width: 200px;
+  z-index: 1000;
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    .close-icon{
+      width: 1.5rem;
+      fill: $mediumGrayBlue;
+      transition: all .3s ease;
+      &:hover{
+        fill: $darkGrayBlue;
+      }
+    }
+  }
+
+  .place-title {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 800;
+  }
+  .place-icon-container{
+    background-color: $secondary-blue;
+    padding: .5rem 1.5rem;
+    border-radius: 1rem;
+    width: 12rem;
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+    .place-icon,
+    .place-card-icon{
+      height: 2rem;
+      fill: $white;
+    }
+    .icon-title{
+      font-size: 1.5rem;
+      color: $white;
+    }
+  }
+
+  .place-transportation {
+    margin: 0.5rem 0;
+    font-size: 1.4rem;
+  }
+  .primary-button{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}

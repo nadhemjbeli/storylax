@@ -1,0 +1,60 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $custom-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  @include poppins-medium;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+// Remove default list styles
+ul,
+ol {
+  list-style: none;
+}
+
+// Remove anchor text decoration and set color
+a {
+  text-decoration: none;
+  color: inherit; // Inherit color from parent element
+  cursor: pointer;
+  display: inline-block;
+}
+
+// Remove button default styles
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  appearance: none; // Remove default styles
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+}

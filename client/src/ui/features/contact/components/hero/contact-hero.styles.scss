@@ -1,0 +1,32 @@
+.contact-us-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  .left, .right{
+    width: 600px;
+    min-width: 450px;
+    margin: 0;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  .contact-us-hero {
+    justify-content: center;
+    .left{
+      .helpers-container{
+        gap: 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        .card{
+          width: calc(50rem / 2 - 5rem);
+          height: 22rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1060px) {
+  .contact-us-hero {
+    flex-wrap: wrap;
+  }
+}

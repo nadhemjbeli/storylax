@@ -1,0 +1,33 @@
+.hero-section-blog{
+  height: calc(100vh);
+  width: calc(100%);
+  background: url("../../../../../assets/images/blog/background-blog.png") no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  padding: 15rem 0 0 50rem;
+  .hero-content{
+    width: 50rem;
+    .hero-title{
+      margin-bottom: 2rem;
+      color: $white;
+      font-size: 4.5rem;
+      text-shadow: 3px 3px 5.5px rgba(0, 0, 0, 0.7);
+    }
+    .search-form{
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      .search{
+        border-radius: 1.5rem;
+        padding: .8rem;
+        font-size: 2rem;
+        background-color: $white;
+      }
+      .primary-button{
+        font-size: 1.7rem;
+        padding: 1rem;
+      }
+    }
+  }
+
+}

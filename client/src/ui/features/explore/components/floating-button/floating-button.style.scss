@@ -1,0 +1,33 @@
+
+
+.floating-button {
+  z-index: 6000;
+  position: fixed; // Ensure the parent container has a relative position
+  width: 20rem; // Ensure it spans the width of its container
+  @include btn-animation(1rem);
+  right: 3rem; // Adjust this value based on your layout
+  bottom: $chatbot-btn-bottom;
+  margin-left: auto;
+  &.primary-button-outline{
+    &:hover{
+      border-color: $primary-blue;
+    }
+  }
+  .call-to-action-icon{
+    z-index: 1;
+    width: 2rem;
+    left: -15px;
+    position: absolute;
+    opacity: 0;
+    transition: left 0.5s ease-in-out;
+    top: 1.5rem;
+    fill: white;
+  }
+  &:hover {
+    .call-to-action-icon {
+      opacity: 1;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

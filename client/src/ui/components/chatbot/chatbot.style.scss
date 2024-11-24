@@ -1,0 +1,83 @@
+
+  .chatbot-component {
+    z-index: 5500;
+    position: fixed;
+    bottom: calc($chatbot-btn-bottom + 8rem);
+    right: $chatbot-btn-right;
+    //width: 90vw; /* Adjust width as per your chatbot design */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    .react-chatbot-kit-chat-container{
+      overflow: auto;
+      width: 30rem;
+    }
+
+    .react-chatbot-kit-user-chat-message,
+    .react-chatbot-kit-chat-bot-message,
+    .react-chatbot-kit-chat-header,
+    .react-chatbot-kit-chat-input{
+      font-size: 1.4rem;
+    }
+
+    .react-chatbot-kit-chat-header{
+      cursor: pointer;
+      background-color: $primary-darkBlue;
+      color: white;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: $darkGrayBlue;
+        font-weight: bold;
+      }
+    }
+
+    .react-chatbot-kit-chat-btn-send{
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $primary-darkBlue;
+      }
+    }
+
+    .react-chatbot-kit-chat-bot-avatar-container{
+      font-size: 1.7rem;
+    }
+
+    &.hidden {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    &.home-chatbot-component{
+      bottom: calc($chatbot-btn-bottom + 12rem);
+      right: calc($chatbot-btn-right + 10rem);
+    }
+  }
+
+  .toggle-button {
+    position: fixed;
+    bottom: $chatbot-btn-bottom;
+    right: $chatbot-btn-right; /* Align with chatbot position */
+    z-index: 5501; /* Ensure it's above chatbot */
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: $primary-blue;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $primary-darkBlue;
+    }
+    &.active{
+      background-color: $darkGrayBlue;
+    }
+    & .chatbot-icon{
+      width: 4rem;
+      fill: $white;
+    }
+    &.home-chatbot{
+      bottom: calc($chatbot-btn-bottom + 12rem);
+      //right: calc($chatbot-btn-right + 20rem);
+    }
+    &.explore-chatbot{
+      right: calc($chatbot-btn-right + 20rem);
+      bottom: calc($chatbot-btn-bottom + .3rem);
+    }
+  }

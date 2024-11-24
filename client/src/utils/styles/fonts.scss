@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'huntgraphy';
+  src: url('../../assets/fonts/Huntgraphy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'color-happy';
+  src: url('../../assets/fonts/ColourHappyRegular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin poppins($weight, $style: normal) {
+  font-family: "Poppins", sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin huntgraphy($weight, $style: normal) {
+  font-family: 'huntgraphy', sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin color-happy($weight, $style: normal) {
+  font-family: 'color-happy', sans-serif;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin inter($weight: 500) {
+  font-family: "Inter", sans-serif;
+  font-weight: $weight;
+}
+
+// Medium
+@mixin poppins-medium {
+  @include poppins(500);
+}
+
+// Medium
+@mixin huntgraphy-medium {
+  @include huntgraphy(500);
+}
+
+// Medium
+@mixin color-happy-medium {
+  @include color-happy(500);
+}
+
+// Bold
+@mixin poppins-bold {
+  @include poppins(700);
+}
+
+// Black
+@mixin poppins-black {
+  @include poppins(900);
+}
+
+// Black
+@mixin huntgraphy-black {
+  @include huntgraphy(900);
+}
+
+// Black
+@mixin color-happy-black {
+  @include color-happy(900);
+}

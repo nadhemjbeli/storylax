@@ -1,0 +1,90 @@
+.itinerary-section {
+  overflow: hidden;
+  margin-top: 7rem;
+
+  .itinerary-title {
+    font-size: 3.5rem;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 2rem;
+    transition: transform 0.3s ease-in-out;
+
+    &.animating {
+      transform: translateX(-5%); // Adjust the percentage as needed for the desired animation effect
+    }
+
+    .itinerary-card {
+      border-radius: $border-radius;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .itinerary-image {
+        border-radius: $border-radius;
+        width: 100%;
+        height: 30rem;
+        margin-bottom: 1rem;
+        object-fit: cover;
+      }
+
+      .itinerary-card-title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .itinerary-exact-place {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .itinerary-description {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .navigation-buttons {
+    position: relative;
+    left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 2rem;
+
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      font-size: 1.6rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 100vh;
+      height: 5rem;
+      width: 5rem;
+      .icon{
+        fill: $primary-blue;
+        height: 3rem;
+      }
+
+      &:hover, :focus {
+        .icon{
+          fill: $white;
+        }
+        background-color: $primary-blue; // Adjust the hover color as needed
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+$imageHeight:40rem;
+
+.header-section{
+  margin-bottom: 3.5rem;
+  .heading{
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .first-part{
+    padding: 3.5rem 9rem;
+    width: calc(100% + 9rem * 2);
+    margin-left: -9rem;
+    background-image: url("../../../../../assets/images/about-us/light-blue-background.jpg");
+
+    .about-title,
+    .description{
+      //width: calc(100% - 9rem * 2);
+    }
+    .about-title{
+
+    }
+  }
+  .second-part{
+    padding-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    .left-part,
+    .right-part{
+      width: 45%;
+    }
+    .left-part{
+      width: 45%;
+
+      .image-container{
+        position: relative;
+        margin: 3.5rem 0;
+        height: $imageHeight;
+
+      }
+    }
+    .right-part{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 20px;
+      padding: 20px;
+
+      .card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        .icon-container {
+          .icon {
+            width: 40px;
+            height: 40px;
+            fill: $primary-blue;
+          }
+        }
+
+        .title {
+          font-size: 2rem;
+          margin-bottom: 10px;
+          color: #333;
+        }
+
+        .description {
+          font-size: 1.6rem;
+          color: #666;
+        }
+      }
+    }
+  }
+
+}

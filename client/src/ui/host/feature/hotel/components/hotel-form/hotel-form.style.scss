@@ -1,0 +1,153 @@
+.blog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .city-search-wrapper {
+    position: relative;
+  }
+
+  .city-dropdown {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ddd;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  label {
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+
+  .image-upload-wrapper {
+    input[type="file"] {
+      border: none;
+      padding: 10px 0;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    background-color: $darkGrayBlue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 5rem;
+
+    &:hover {
+      background-color: $veryDarkGrayBlue;
+    }
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.875em;
+  }
+
+
+  .switch-aside {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+
+      input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          transition: 0.4s;
+          border-radius: 50%;
+        }
+      }
+
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+    }
+  }
+  .tags-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 2rem;
+  }
+
+
+
+  .promoted-toggle-button {
+    margin: 0;
+    padding: 10px 20px;
+    background-color: $danger-button;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    //margin-top: 10px;
+
+    &.active {
+      background-color: $primary-blue;
+    }
+  }
+}
+
+
+
+.city-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+}
